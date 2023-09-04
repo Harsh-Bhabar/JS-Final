@@ -28,4 +28,26 @@ console.log(x2func());
 
 
 // USES 
-//  
+// in module design pattern 
+// in CURRYING
+// in ONCE function
+// in MEMORIZE function
+// in miantaing state in async world 
+// setTimeouts 
+// iterators 
+
+// DISADVANTAGES 
+// memory consumptions since variables are not garbage-collector will end
+
+function outest(a) {
+	function outer(b) {
+		function inner(c) {
+			console.log(a, b, c);
+		}
+		return inner;
+	}
+	return outer;
+}
+
+const c = outest(10);
+console.log(c(20)(30));
